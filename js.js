@@ -2,9 +2,12 @@ const selectedLevel = parseInt(localStorage.getItem('selectedLevel')) || 1;
 let turnIndex = 0;
 
 document.addEventListener("DOMContentLoaded", function() {
-    loadUsers();
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    if (users.length) document.getElementById("currentPlayer").innerHTML = `${users[0].name}'s turn`;
+
+    if (document.getElementById("userList")) loadUsers();
+    if (document.getElementById("currentPlayer") && users.length) {
+        document.getElementById("currentPlayer").innerHTML = `${users[0].name}'s turn`;
+    }
 });
 
 function getQ(data) {

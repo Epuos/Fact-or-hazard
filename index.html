@@ -35,7 +35,7 @@
 
         <div class="card" id="settings-card">
             <div class="setting-group">
-                <p class="setting-label">Starting Level</p>
+                <p class="setting-label">Starting Truth Level</p>
                 <div class="toggle-group">
                     <button class="toggle level active" data-level="1" onclick="selectLevel(this)">1</button>
                     <button class="toggle level" data-level="2" onclick="selectLevel(this)">2</button>
@@ -45,7 +45,12 @@
                 </div>
             </div>
             <div class="btn-group">
-                <button onclick="gotoquestionpage()">Start!</button>
+                <button onclick="gototod()">Start!</button>
+            </div>
+            <div class = "setting-group"><p class="setting-label" style="text-align: center;">Or</p> </div>
+            <div class="btn-group">
+                <button onclick="gotodarepage()">Dare Only</button>
+                <button onclick="gotoquestionpage()">Truth Only</button>
             </div>
         </div>
 

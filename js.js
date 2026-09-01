@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// --- Asked-questions tracking (per player) ---
 function getAskedMap() {
     return JSON.parse(localStorage.getItem("askedQuestions")) || {};
 }
@@ -43,6 +42,7 @@ function filterUnaskedQuestions(questions, userId) {
     // All questions have been asked to this user before - reset their history.
     asked[userId] = [];
     localStorage.setItem("askedQuestions", JSON.stringify(asked));
+    console.log("Reset")
     return questions;
 }
 
@@ -136,4 +136,25 @@ function gotoquestionpage() {
     const activeLevelBtn = document.querySelector('.toggle.level.active');
     localStorage.setItem('selectedLevel', activeLevelBtn ? activeLevelBtn.dataset.level : "1");
     window.location.href = 'Question.html';
+}
+
+function gotodarepage() {
+    const activeLevelBtn = document.querySelector('.toggle.level.active');
+    localStorage.setItem('selectedLevel', activeLevelBtn ? activeLevelBtn.dataset.level : "1");
+    window.location.href = 'Dare.html';
+}
+
+function gototod() {
+    const activeLevelBtn = document.querySelector('.toggle.level.active');
+    localStorage.setItem('selectedLevel', activeLevelBtn ? activeLevelBtn.dataset.level : "1");
+    window.location.href = 'TruthAndDare.html';
+}
+
+function getDare() {
+    const randomDare = dares[Math.floor(Math.random() * dares.length)];
+    document.getElementById('question').innerHTML = randomDare;
+}
+
+function specialfunction() {
+    document.getElementById('question').innerHTML = "Fact Or Hazard?";
 }

@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoHRoulette</title>
     <link rel="stylesheet" href="./css.css">
-    <script src="./database.js" defer></script>
+    <script src="./DareDatabase.js" defer></script>
     <script src="./js.js" defer></script>
 </head>
-<body onload="getQ(data)">
+<body onload="getDare()">
 
     <div class="wrapper">
         <div class="card" id="question-card">
@@ -17,7 +17,7 @@
             <p class="card-title" id="currentPlayer"></p>
             <div class="btn-group">
                 <button onclick="nextTurn();">Next Person</button>
-                <button onclick="getQ(data)">Another Question</button>
+                <button onclick="getDare()">Another Dare</button>
             </div>
         </div>
     </div>
